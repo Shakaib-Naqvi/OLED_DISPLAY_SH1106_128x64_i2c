@@ -21,6 +21,12 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SH110X.h>
+#include <Fonts/FreeMonoBold12pt7b.h>        // Example font
+#include <Fonts/FreeSans12pt7b.h>            // Example font
+#include <Fonts/FreeSerifBoldItalic9pt7b.h>  // Example font
+#include <Fonts/FreeSerifItalic12pt7b.h>     // Example font
+#include <Fonts/Org_01.h>                    // Example font
+
 
 /* Uncomment the initialize the I2C address , uncomment only one, If you get a totally blank screen try the other*/
 #define i2c_Address 0x3c  //initialize with the I2C addr 0x3C Typically eBay OLED's
@@ -74,7 +80,9 @@ void setup() {
   // delay(1000);
 
   // Clear the buffer.
-  display.clearDisplay();
+
+
+
 
   // draw a single pixel
   // display.drawPixel(10, 10, SH110X_WHITE);
@@ -136,47 +144,100 @@ void setup() {
   // display.display();
   // delay(2000);
 
-  display.clearDisplay();
+  // display.clearDisplay();
+  // // text display tests
+  // display.setTextSize(1);
+  // display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+  // display.setCursor(30, 20);
+  // display.print("Company Name");
+  // // display.setTextSize(2);
+  // // display.setCursor(12, 30);
+  // // display.print("9/11/2024");
+  // display.display();
+  // delay(1000);
+
+  // display.clearDisplay();
   // text display tests
-  display.setTextSize(1);
-  display.setTextColor(SH110X_WHITE, SH110X_BLACK);
-  display.setCursor(30, 20);
-  display.print("Company Name");
+  // display.setTextSize(3);
+  // display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+  // display.setCursor(15, 20);
+  // display.print("12");
+  // display.print(":");
+  // display.print("55");
+  // display.display();
+  // delay(1000);
+
+  // display.clearDisplay();
   // display.setTextSize(2);
-  // display.setCursor(12, 30);
+  // display.setCursor(12, 25);
   // display.print("9/11/2024");
-  display.display();
-  delay(2000);
+  // display.display();
+  //   // delay(1000);
+  //   #include <Fonts/FreeMonoBold12pt7b.h.h> // Example font
+  // #include <Fonts/FreeSans12pt7b.h> // Example font
+  // #include <Fonts/FreeSerifBoldItalic9pt7b.h> // Example font
+  // #include <Fonts/FreeSerifItalic12pt7b.h> // Example font
+  // #include <Fonts/Org_01.h> // Example font
 
-  display.clearDisplay();
-  // text display tests
-  display.setTextSize(3);
-  display.setTextColor(SH110X_WHITE, SH110X_BLACK);
-  display.setCursor(15, 20);
-  display.print("12");
-  display.print(":");
-  display.print("55");
-  display.display();
-  delay(5000);
+  // display.clearDisplay();
+  // display.setTextSize(3);
+  // display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+  // display.setCursor(20, 40);
+  // display.setFont(&FreeMonoBold12pt7b.h);
+  // display.print("25");
+  // display.display();
+  // delay(2000);
 
-  display.clearDisplay();
-  display.setTextSize(2);
-  display.setCursor(12, 25);
-  display.print("9/11/2024");
-  display.display();
-  delay(5000);
-  display.clearDisplay();
-  display.setTextSize(5);
-  display.setTextColor(SH110X_WHITE, SH110X_BLACK);
-  display.setCursor(20, 10);
-  display.println("22c");
-  // display.fillCircle(display.width() / 2, display.height() / 2, 10, SH110X_WHITE);
-  //   display.setCursor(18, 20);
-  // display.fillCircle(12, 12, 2, SH110X_WHITE);
-  // testdrawcircle();
+
+  // display.clearDisplay();
+  // display.setTextSize(3);
+  // display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+  // display.setCursor(20, 40);
+  // display.setFont(&FreeSans12pt7b);
+  // display.print("25");
+  // display.display();
+  // delay(2000);
+
+
+  // display.clearDisplay();
+  // display.setTextSize(3);
+  // display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+  // display.setCursor(20, 40);
+  // display.setFont(&FreeSerifBoldItalic9pt7b);
+  // display.print("25");
+  // display.display();
+  // delay(2000);
+
+
+  // display.clearDisplay();
+  // display.setTextSize(3);
+  // display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+  // display.setCursor(20, 40);
+  // display.setFont(&FreeSerifItalic12pt7b);
+  // display.print("25");
+  // display.display();
+  // delay(2000);
+
+
+  // display.clearDisplay();
+  // display.setTextSize(8);
+  // display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+  // display.setCursor(15, 45);
+  // display.setFont(&Org_01);
+  // display.print("2");
+  // for (int i = 0; i < 10; i++) {
+  //   display.print(String(i));
+  // }
+  // display.setTextSize(1);
+  // display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+  // display.setCursor(105, 10);
+  // display.print("o");
+  // display.setTextSize(2);
+  // display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+  // display.setCursor(110, 45);
   // display.print("C");
-  display.display();
-  delay(5000);
+  // display.display();
+  // delay(2000);
   // display.setTextColor(SH110X_BLACK, SH110X_WHITE); // 'inverted' text
   // display.println(3.141592);
   // display.setTextSize(2);
@@ -204,6 +265,58 @@ void setup() {
 
 
 void loop() {
+  display.clearDisplay();
+  display.setTextSize(2);
+  display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+  display.setCursor(8, 44);
+  display.setFont(&FreeMonoBold12pt7b);
+  display.print("BITA");
+  display.display();
+  delay(1000);
+
+  display.clearDisplay();
+  display.setTextSize(4);
+  display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+  display.setCursor(4, 38);
+  display.setFont(&Org_01);
+  display.print("14.9.24");
+  //   display.setCursor(55, 35);
+  // display.println("9");
+  //   display.setCursor(28, 58);
+  // display.print("2024");
+  display.display();
+  delay(2000);  
+  
+  display.clearDisplay();
+  display.setTextSize(4);
+  display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+  display.setCursor(2, 40);
+  display.setFont(&Org_01);
+  display.print("03:36");
+  display.setTextSize(2);
+  display.setCursor(108, 45);
+  display.print("pm");
+  display.display();
+  delay(1000);
+  for (int i = 0; i < 10; i++) {
+    display.clearDisplay();
+    display.setTextSize(11);
+    display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+    display.setCursor(5, 50);
+    display.setFont(&Org_01);
+    display.print("2");
+    display.print(String(i));
+    display.setTextSize(1);
+    display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+    display.setCursor(115, 10);
+    // display.print("o");
+    display.setTextSize(2);
+    display.setTextColor(SH110X_WHITE, SH110X_BLACK);
+    display.setCursor(120, 50);
+    // display.print("C");
+    display.display();
+    delay(400);
+  }
 }
 
 
